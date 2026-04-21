@@ -56,7 +56,11 @@ ODIR = obj
 SDIR = src
 
 OBJS = \
-	kernel_main.o \
+    kernel_main.o \
+    game.o \
+    movement.o \
+    fruit.o \
+    screen.o \
 
 # Make sure to keep a blank line here after OBJS list
 
