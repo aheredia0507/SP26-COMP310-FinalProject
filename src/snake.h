@@ -4,7 +4,8 @@
  *
  * Final Project - Snake Game
  *
- * Main header file with shared structures and constants
+ * Main header file with shared structures, constants, and external
+ * function declarations used across all game modules.
  *
  **/
 
@@ -84,8 +85,18 @@ struct GameState {
 // Global game state (declared in game.c)
 extern struct GameState game;
 
-// External functions from kernel_main.c
+// Low-level port I/O (defined in kernel_main.c, OS book Listing 12)
+extern uint8_t  inb(uint16_t port);
+extern void     outb(uint16_t port, uint8_t data);
+
+// PIT counter reader for RNG entropy (defined in kernel_main.c)
+// Reads PIT channel 0 - see OS book Table 3.1 and Section 3.3
+extern uint16_t read_pit_count(void);
+
+// Framebuffer pixel writer (defined in kernel_main.c)
 extern void drawPixel(int x, int y, int color);
-extern uint8_t inb(uint16_t port);
+
+// Timer tick flag set by pit_handler in interrupt.c
+extern volatile int timer_tick;
 
 #endif

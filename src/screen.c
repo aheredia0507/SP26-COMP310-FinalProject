@@ -99,7 +99,7 @@ static const uint8_t font_data[][8] = {
     {0x00, 0x00, 0x88, 0x88, 0x78, 0x08, 0x88, 0x70},
 };
 
-// Simple apple sprite: 30x30 pixel art (manually coded)
+// Simple apple sprite: 30x30 pixel art
 // 0 = transparent, 1 = red, 2 = dark red, 3 = brown, 4 = green leaf
 static const uint8_t apple_sprite_30[30][30] = {
     {0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -182,7 +182,7 @@ int get_char_index(char c) {
 void draw_char(char c, int x, int y, int scale, int color) {
     int idx = get_char_index(c);
     const uint8_t *bitmap = font_data[idx];
-    
+
     for(int row = 0; row < 8; row++) {
         uint8_t line = bitmap[row];
         for(int col = 0; col < 8; col++) {
@@ -209,7 +209,7 @@ void draw_text(char *text, int x, int y, int scale, int color) {
 void draw_cell(int grid_x, int grid_y, int color) {
     int pixel_x = (grid_x * CELL_SIZE) + OFFSET_X;
     int pixel_y = (grid_y * CELL_SIZE) + OFFSET_Y;
-    
+
     for(int px = 0; px < CELL_SIZE; px++) {
         for(int py = 0; py < CELL_SIZE; py++) {
             drawPixel(pixel_x + px, pixel_y + py, color);
