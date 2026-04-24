@@ -1,7 +1,5 @@
 /**
  *
- * Arthur Heredia - COMP 310 - Operating Systems
- *
  * Final Project - Snake Game - Fruit Module
  *
  * Implements fruit spawning and collision detection
@@ -27,6 +25,7 @@
  * 4. Mark fruit as active
  *
  **/
+
 void spawn_fruit(void) {
     int valid_position = 0;
     
@@ -57,7 +56,7 @@ void spawn_fruit(void) {
  * Deliverable:
  * ------------
  * Check if snake head is on fruit, grow snake and spawn new fruit
- * FIXED: Position new tail segment immediately when growing
+ * Position new tail segment immediately when growing
  *
  * Pseudocode:
  *
@@ -69,6 +68,7 @@ void spawn_fruit(void) {
  * 6. Spawn new fruit
  *
  **/
+
 void check_fruit_collision(void) {
     // 1. Only check if fruit is active
     if(!game.fruit_active) return;
