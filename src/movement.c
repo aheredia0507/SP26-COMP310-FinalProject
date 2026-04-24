@@ -14,7 +14,7 @@
  *
  * Deliverable:
  * ------------
- * Move snake one cell in current direction
+ * Move the snake one cell in current direction
  *
  * Pseudocode:
  *
