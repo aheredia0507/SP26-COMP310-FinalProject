@@ -1,7 +1,5 @@
 /**
  *
- * Arthur Heredia - COMP 310 - Operating Systems
- *
  * Final Project - Snake Game - Movement Module
  *
  * Snake movement and direction handling
