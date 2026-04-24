@@ -1,7 +1,5 @@
 /**
  *
- * Arthur Heredia - COMP 310 - Operating Systems
- *
  * Final Project - Snake Game - Game Module
  *
  * Game state management and initialization
