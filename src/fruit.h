@@ -2,7 +2,7 @@
  *
  * Final Project - Snake Game - Fruit Module
  *
- * Fruit generation and collision detection
+ * Fruit generation, and collision detection
  *
  **/
 
