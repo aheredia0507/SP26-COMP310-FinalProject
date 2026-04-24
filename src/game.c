@@ -3,7 +3,7 @@
  * Final Project - Snake Game - Game Module
  *
  * Implements game state, initialization, collision detection,
- * keyboard input handling, and the main game loop.
+ * keyboard input handling, and the main game loop
  *
  * Random number generation uses an LCG (Linear Congruential Generator)
  * seeded from the PIT (Programmable Interval Timer) counter at the moment
