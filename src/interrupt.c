@@ -1,7 +1,5 @@
 /**
  *
- * Arthur Heredia - COMP 310 - Operating Systems
- *
  * Final Project - Snake Game - Interrupt Module
  *
  * Stripped-down interrupt infrastructure adapted from HW3 interrupt.c.
@@ -116,6 +114,7 @@ struct seg_desc gdt_desc = {
  * 2. Always send EOI to master PIC
  *
  **/
+
 void PIC_sendEOI(unsigned char irq) {
 
     // 1. If IRQ is from slave PIC, send EOI there first
@@ -144,7 +143,6 @@ void PIC_sendEOI(unsigned char irq) {
  * The __attribute__((interrupt)) tells gcc to generate the proper ISR
  * prologue and epilogue - it saves all registers before our code runs
  * and restores them after, so the interrupted program is not disrupted.
- * This is the behavior described in OS book Section 3.4.
  *
  * Pseudocode:
  *
@@ -154,6 +152,7 @@ void PIC_sendEOI(unsigned char irq) {
  * 4. Send End of Interrupt to PIC so future timer interrupts can fire
  *
  **/
+
 __attribute__((interrupt)) void pit_handler(struct interrupt_frame *frame) {
 
     // 1. Increment tick counter each time PIT fires
@@ -189,6 +188,7 @@ __attribute__((interrupt)) void pit_handler(struct interrupt_frame *frame) {
  * 4. Reload all data segment registers with kernel data selector (0x10)
  *
  **/
+
 void load_gdt(void) {
 
     // 1-4. Load GDT and reload segment registers via inline assembly
@@ -227,6 +227,7 @@ void load_gdt(void) {
  * 5. Store high 16 bits of handler address
  *
  **/
+
 static void idt_set_gate(uint8_t num, uint32_t base, uint16_t sel, uint8_t flags) {
 
     // 1. Low 16 bits of handler address
@@ -261,6 +262,7 @@ static void idt_set_gate(uint8_t num, uint32_t base, uint16_t sel, uint8_t flags
  * 1. Execute lidt instruction with the IDT pointer
  *
  **/
+
 static void idt_flush(struct idt_ptr *idt) {
 
     // 1. Load IDT into CPU
@@ -290,6 +292,7 @@ static void idt_flush(struct idt_ptr *idt) {
  * 4. Load the IDT into the CPU with idt_flush
  *
  **/
+
 void init_idt(void) {
 
     // 1. Set IDT pointer
@@ -334,6 +337,7 @@ void init_idt(void) {
  * 6. Mask all IRQs except IRQ 0 (PIT timer)
  *
  **/
+
 void remap_pic(void) {
 
     // 1. Begin initialization sequence on both PICs
