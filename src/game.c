@@ -459,6 +459,10 @@ void setup_test_mode(void) {
 
     // 6. Mark fruit as active
     game.fruit_active = 1;
+
+    // Set score to max fruits eaten for win screen test
+    game.score = 104;
+
 }
 
 
@@ -499,7 +503,7 @@ void setup_test_mode(void) {
  **/
 
 void game_loop(void) {
-    int test_mode = 0;  // Set to 1 to test win screen
+    int test_mode = 1;  // Set to 1 to test win screen
 
     // 1. Initialize all game components
     init_game();
