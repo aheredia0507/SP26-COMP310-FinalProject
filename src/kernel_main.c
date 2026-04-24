@@ -240,7 +240,6 @@ int parseMultiboot2Info(void) {
  **/
 
 void drawPixel(int x, int y, int color) {
-
     // 1-2. Write color to the framebuffer at the computed offset
     framebuffer[x + (y * framebufferWidth)] = (uint32_t)color;
 }
