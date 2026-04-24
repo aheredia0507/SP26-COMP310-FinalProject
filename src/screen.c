@@ -1,7 +1,5 @@
 /**
  *
- * Arthur Heredia - COMP 310 - Operating Systems
- *
  * Final Project - Snake Game - Screen Module
  *
  * Implements all rendering using frame buffer tracking
@@ -255,6 +253,7 @@ int get_background_color(int x, int y) {
  * 2. Return corresponding RGB color
  *
  **/
+
 int get_apple_color(uint8_t value) {
     // 1-2. Map values to colors
     switch(value) {
@@ -285,6 +284,7 @@ int get_apple_color(uint8_t value) {
  * 4. Draw color or background for each pixel
  *
  **/
+
 void draw_apple(int grid_x, int grid_y) {
     // 1. Calculate base position and get grid cell's background color
     int base_x = (grid_x * SEGMENT_SIZE * CELL_SIZE) + OFFSET_X;
@@ -447,6 +447,7 @@ void draw_initial_game_state(void) {
  * 4. Update frame buffer
  *
  **/
+
 void render_game(void) {
     // 1. Create new frame buffer state
     uint8_t new_buffer[GRID_HEIGHT][GRID_WIDTH];
