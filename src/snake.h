@@ -1,7 +1,5 @@
 /**
  *
- * Arthur Heredia - COMP 310 - Operating Systems
- *
  * Final Project - Snake Game
  *
  * Main header file with shared structures, constants, and external
