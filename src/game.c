@@ -1,7 +1,5 @@
 /**
  *
- * Arthur Heredia - COMP 310 - Operating Systems
- *
  * Final Project - Snake Game - Game Module
  *
  * Implements game state, initialization, collision detection,
@@ -138,6 +136,7 @@ int random_int(void) {
  * 3. Return the result
  *
  **/
+
 int random_range(int min, int max) {
 
     // 1-2. Generate random int and map to [min, max]
@@ -164,6 +163,7 @@ int random_range(int min, int max) {
  * 5. Set initial direction to right
  *
  **/
+
 void init_snake(void) {
 
     // 1. Set initial snake length to 3
@@ -203,6 +203,7 @@ void init_snake(void) {
  * 4. Return 1 if collision detected, 0 otherwise
  *
  **/
+
 int check_wall_collision(void) {
 
     // 1. Get head coordinates
@@ -237,6 +238,7 @@ int check_wall_collision(void) {
  * 4. Return 1 if a match is found, 0 otherwise
  *
  **/
+
 int check_self_collision(void) {
 
     // 1. Get head coordinates
@@ -271,6 +273,7 @@ int check_self_collision(void) {
  * 2. Return 1 if win condition is met, 0 otherwise
  *
  **/
+
 int check_win_condition(void) {
 
     // 1-2. Check if snake fills entire grid
@@ -310,6 +313,7 @@ int check_win_condition(void) {
  *    d. Playing - pass scancode to direction handler
  *
  **/
+
 void read_keyboard_input(void) {
 
     // 1. Read PS/2 status register (OS book Section 3.3, port 0x64)
@@ -426,6 +430,7 @@ void init_game(void) {
  * 6. Mark fruit as active
  *
  **/
+
 void setup_test_mode(void) {
 
     // 1. Set snake length to one fruit away from the win condition
@@ -471,8 +476,8 @@ void setup_test_mode(void) {
  * The PIT fires at ~18 Hz base rate. pit_handler divides this down
  * by a threshold of 3, giving the snake ~6 moves per second.
  *
- * This replaces the polling approach from OS book Section 3.3 with the
- * interrupt-driven approach from Section 3.4, using the same IDT
+ * This replaces the polling approach previously implemented with an
+ * interrupt-driven approach, using the same IDT
  * infrastructure built in HW3.
  *
  * Pseudocode:
@@ -492,6 +497,7 @@ void setup_test_mode(void) {
  *       v.  Render the updated game state
  *
  **/
+
 void game_loop(void) {
     int test_mode = 0;  // Set to 1 to test win screen
 
