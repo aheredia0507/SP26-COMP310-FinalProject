@@ -15,7 +15,7 @@
  *
  * Deliverable:
  * ------------
- * Spawn fruit at a random position not occupied by snake
+ * Spawn fruit at a random position not occupied by snake.
  *
  * Pseudocode:
  *
