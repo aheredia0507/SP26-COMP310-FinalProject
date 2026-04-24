@@ -2,7 +2,7 @@
  *
  * Final Project - Snake Game - Movement Module
  *
- * Snake movement and direction handling
+ * Snake movement, and direction handling
  *
  **/
 
