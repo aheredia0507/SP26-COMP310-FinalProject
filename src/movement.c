@@ -1,7 +1,5 @@
 /**
  *
- * Arthur Heredia - COMP 310 - Operating Systems
- *
  * Final Project - Snake Game - Movement Module
  *
  * Implements snake movement logic
@@ -25,6 +23,7 @@
  * 3. Set new head position
  *
  **/
+
 void move_snake(void) {
     // 1. Calculate new head position based on current direction
     int new_head_x = game.snake_body[0].x;
@@ -63,6 +62,7 @@ void move_snake(void) {
  * 3. Update current direction if valid
  *
  **/
+
 void handle_direction_input(uint8_t scancode) {
     // 1. Map scancode to direction
     int new_direction = game.current_direction;
