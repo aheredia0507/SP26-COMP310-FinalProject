@@ -167,6 +167,8 @@ uint32_t *framebuffer;
 static uint32_t framebufferWidth;
 static uint32_t framebufferHeight;
 
+// Framebuffer setters - called by parseMultiboot2Info to store
+// the base address and dimensions returned in the multiboot2 tag
 void setFramebufferAddress(void *base) { framebuffer = base; }
 void setFramebufferWidth(uint32_t width) { framebufferWidth = width; }
 void setFramebufferHeight(uint32_t height) { framebufferHeight = height; }

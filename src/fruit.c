@@ -82,13 +82,13 @@ void check_fruit_collision(void) {
         int old_length = game.snake_length;
         game.snake_body[old_length].x = game.snake_body[old_length - 1].x;
         game.snake_body[old_length].y = game.snake_body[old_length - 1].y;
-        
+
         // 4. Increase snake length
         game.snake_length++;
-        
-        // 5. Update score
-        game.score += 10;
-        
+
+        // 5. Update score (count fruits eaten)
+        game.score += 1;
+
         // 6. Spawn new fruit
         spawn_fruit();
     }
