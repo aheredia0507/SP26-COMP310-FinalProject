@@ -1003,11 +1003,12 @@ void draw_game_over_screen(void) {
  *
  * Deliverable:
  * ------------
- * Draw the win screen showing the YOU WIN title and a prompt to
- * press Enter to restart. Displayed when the snake fills the entire
- * grid and check_win_condition() returns 1 in game_loop().
- * Text is centered horizontally by calculating pixel width and
- * subtracting from SCREEN_WIDTH.
+ * Draw the win screen showing the YOU WIN title, the number of fruits
+ * eaten displayed next to the apple sprite, and a restart prompt.
+ * Displayed when the snake fills the entire grid and
+ * check_win_condition() returns 1 in game_loop(). Since winning means
+ * eating the maximum possible fruits, the score displayed here will
+ * always be 105.
  * (OS book Section 3.2.1)
  *
  * Pseudocode:
@@ -1024,16 +1025,42 @@ void draw_you_win_screen(void) {
     // 1. Clear the full screen to black
     clear_full_screen(COLOR_BLACK);
 
-    // 2. Calculate centered x position for win text
-    //    "YOU WIN" = 7 chars x 6 pixels x scale 7 = 294px wide
+    // 2. Draw "YOU WIN" centered at y=220
     int win_x = (SCREEN_WIDTH - 294) / 2;
+    draw_text("YOU WIN", win_x, 220, 7, COLOR_YELLOW);
 
-    // 3. Draw win text centered on the screen
-    draw_text("YOU WIN", win_x, 300, 7, COLOR_YELLOW);
+    // 3. Calculate group width for centering apple + score together
+    int sprite_width = 60;
+    int gap = 20;
+    int digit_scale = 4;
+    int digit_count = 0;
+    int temp = game.score;
 
-    // 4. Draw centered restart prompt below the win text
-    //    "Press Enter to Restart" = 22 chars x 6 pixels x scale 3 = 396px wide
-    draw_text("Press Enter to Restart", (SCREEN_WIDTH - 396) / 2, 500, 3, COLOR_TEXT);
+    // 3a. Count digits in score (minimum 1 for score of 0)
+    if(temp == 0) {
+        digit_count = 1;
+    } else {
+        while(temp > 0) {
+            digit_count++;
+            temp /= 10;
+        }
+    }
+
+    // 3b. Calculate total group width and starting x to center it
+    int score_width = digit_count * 6 * digit_scale;
+    int group_width = sprite_width + gap + score_width;
+    int group_x = (SCREEN_WIDTH - group_width) / 2;
+    int group_y = 370;
+
+    // 4. Draw apple sprite at left side of group
+    draw_apple_at_pixel(group_x, group_y);
+
+    // 5. Draw fruit count to the right of the sprite, vertically centered
+    draw_int(game.score, group_x + sprite_width + gap,
+             group_y + 14, digit_scale, COLOR_TEXT);
+
+    // 6. Draw restart prompt at bottom
+    draw_text("Press Enter to Restart", (SCREEN_WIDTH - 414) / 2, 520, 3, COLOR_TEXT);
 }
 
 /**
