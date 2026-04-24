@@ -2,7 +2,7 @@
  *
  * Final Project - Snake Game - Game Module
  *
- * Game state management and initialization
+ * Game state management and initialization.
  *
  **/
 
