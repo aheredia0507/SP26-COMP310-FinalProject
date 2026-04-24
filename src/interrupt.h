@@ -4,7 +4,7 @@
  *
  * Stripped-down interrupt infrastructure for the snake game.
  * Adapted from HW3 interrupt.h - contains only what is needed
- * to set up the IDT and run the PIT timer interrupt.
+ * to set up the IDT and run the PIT timer interrupt
  *
  * Removed from HW3 original:
  *   - TSS/task switching structures (not needed for single program)
