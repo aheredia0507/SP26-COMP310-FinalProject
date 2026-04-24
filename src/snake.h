@@ -3,7 +3,7 @@
  * Final Project - Snake Game
  *
  * Main header file with shared structures, constants, and external
- * function declarations used across all game modules.
+ * function declarations used across all game modules
  *
  **/
 
