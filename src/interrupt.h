@@ -1,7 +1,5 @@
 /**
  *
- * Arthur Heredia - COMP 310 - Operating Systems
- *
  * Final Project - Snake Game - Interrupt Module
  *
  * Stripped-down interrupt infrastructure for the snake game.
