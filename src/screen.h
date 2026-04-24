@@ -2,7 +2,7 @@
  *
  * Final Project - Snake Game - Screen Header
  *
- * Declares all screen rendering functions
+ * Declares all screen rendering functions.
  *
  **/
 
