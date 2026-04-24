@@ -255,7 +255,8 @@ int get_char_index(char c) {
  * Since no text rendering library exists in a freestanding kernel
  * environment the font and renderer are implemented entirely from
  * scratch. This is a direct consequence of the -ffreestanding compiler
- * flag described in OS book Section 2.3.3.
+ * flag 
+ * (OS book Section 2.3.3.)
  *
  * @param c     - Character to draw
  * @param x     - Pixel x coordinate of top-left corner
@@ -403,7 +404,8 @@ void draw_text(char *text, int x, int y, int scale, int color) {
  * using CELL_SIZE and OFFSET values defined in snake.h.
  *
  * All drawing ultimately calls drawPixel() which performs
- * memory-mapped I/O to the framebuffer (OS book Section 3.2.1).
+ * memory-mapped I/O to the framebuffer 
+ * (OS book Section 3.2.1).
  *
  * @param grid_x - Grid x coordinate
  * @param grid_y - Grid y coordinate
@@ -764,12 +766,13 @@ void clear_full_screen(int color) {
  * nothing. Used on menu screens to prevent the input polling loop
  * from running faster than necessary.
  *
- * This is the polling I/O pattern (OS book Section 3.3)
- * where the CPU continuously checks a condition rather than waiting
+ * Polling I/O pattern where the CPU 
+ * continuously checks a condition rather than waiting
  * for a hardware interrupt. Snake movement no longer uses this
  * function - it is driven by the PIT interrupt in interrupt.c.
  * The volatile keyword prevents the compiler from optimizing the
  * loop away since it has no observable side effects.
+ * (OS book Section 3.3)
  *
  * @param iterations - Number of empty loop iterations to burn
  *
@@ -835,8 +838,7 @@ void draw_pixel_rect(int x, int y, int width, int height, int color) {
  * press Enter to start. Text is centered horizontally by calculating
  * the pixel width of each string and subtracting from SCREEN_WIDTH.
  * Called once when the game first starts and again after a restart.
- *
- *  OS book Section 3.2.1
+ * (OS book Section 3.2.1)
  *
  * Pseudocode:
  *
@@ -881,8 +883,7 @@ void draw_title_screen(void) {
  * centered horizontally by calculating its pixel width and subtracting
  * from SCREEN_WIDTH. Called when the player presses Enter on the
  * title screen.
- *
- * OS book Section 3.2.1
+ * (OS book Section 3.2.1)
  *
  * Pseudocode:
  *
@@ -932,8 +933,7 @@ void draw_how_to_play_screen(void) {
  * Score display uses draw_apple_at_pixel and draw_int since no stdlib
  * is available in a freestanding kernel environment - printf does not
  * exist so integer rendering must be implemented manually.
- *
- * Reference: OS book Section 2.3.3 - freestanding kernel constraints
+ * (OS book Section 2.3.3)
  *
  * Pseudocode:
  *
@@ -1008,8 +1008,7 @@ void draw_game_over_screen(void) {
  * grid and check_win_condition() returns 1 in game_loop().
  * Text is centered horizontally by calculating pixel width and
  * subtracting from SCREEN_WIDTH.
- *
- * OS book Section 3.2.1
+ * (OS book Section 3.2.1)
  *
  * Pseudocode:
  *
@@ -1051,8 +1050,7 @@ void draw_you_win_screen(void) {
  *
  * Unlike render_game which only redraws changed cells, this function
  * redraws every cell unconditionally to ensure a clean starting state.
- *
- * OS book Section 3.2.1
+ * (OS book Section 3.2.1)
  *
  * Pseudocode:
  *
