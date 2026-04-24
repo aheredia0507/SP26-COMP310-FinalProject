@@ -2,7 +2,7 @@
  *
  * Final Project - Snake Game - Interrupt Module
  *
- * Stripped-down interrupt infrastructure adapted from HW3 interrupt.c.
+ * Stripped-down interrupt infrastructure adapted from HW3 interrupt.c
  * Sets up the GDT, IDT, and PIC so the PIT can fire timer interrupts
  * that drive snake movement instead of a busy-wait frame counter.
  *
