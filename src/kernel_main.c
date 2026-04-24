@@ -1,7 +1,5 @@
 /**
  *
- * Arthur Heredia - COMP 310 - Operating Systems
- *
  * Final Project - Snake Game
  *
  * Main kernel entry point. Parses multiboot2 info, sets up the
@@ -85,6 +83,7 @@ struct multiboot_tag terminator_tag __attribute__((section(".multiboot3"))) = {
  * 2. Return the byte read from the port
  *
  **/
+
 uint8_t inb(uint16_t _port) {
     uint8_t rv;
 
@@ -112,6 +111,7 @@ uint8_t inb(uint16_t _port) {
  * 1. Execute the x86 out instruction sending _data to _port
  *
  **/
+
 void outb(uint16_t _port, uint8_t _data) {
 
     // 1. Write one byte to the port using inline assembly
@@ -145,6 +145,7 @@ void outb(uint16_t _port, uint8_t _data) {
  * 4. Combine bytes and return the 16-bit counter value
  *
  **/
+
 uint16_t read_pit_count(void) {
     uint16_t count;
 
@@ -189,6 +190,7 @@ uint32_t *pMultibootInfo;
  * 4. Advance p past the current tag (aligned to 8 bytes)
  *
  **/
+
 int parseMultiboot2Info(void) {
     uint32_t *p = pMultibootInfo + 2;
     unsigned int totalStructSize = *pMultibootInfo;
@@ -234,6 +236,7 @@ int parseMultiboot2Info(void) {
  * 2. Write the color value to that index
  *
  **/
+
 void drawPixel(int x, int y, int color) {
 
     // 1-2. Write color to the framebuffer at the computed offset
@@ -265,6 +268,7 @@ void drawPixel(int x, int y, int color) {
  * 3. Send high byte of reload value to channel 0 data port
  *
  **/
+
 void program_pit_timer(uint32_t reload_val) {
 
     // 1. Mode command: channel 0, lobyte/hibyte, rate generator (0x34)
@@ -276,7 +280,6 @@ void program_pit_timer(uint32_t reload_val) {
     // 3. Send high byte of reload value
     outb(0x40, (reload_val >> 8) & 0xFF);
 }
-
 
 /**
  *
