@@ -125,7 +125,7 @@ static const uint8_t font_data[][8] = {
     {0x70, 0x88, 0x88, 0x78, 0x08, 0x88, 0x70, 0x00},
 };
 
-// Simple apple sprite: 30x30 pixel art
+// Simple fruit sprite: 30x30 pixel art
 // 0 = transparent, 1 = red, 2 = dark red, 3 = brown, 4 = green leaf
 static const uint8_t apple_sprite_30[30][30] = {
     {0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
